@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNova | Premium Tech Assessment</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using Google Fonts for a modern typography feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div class="app-container">
+        
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="logo">Quiz<span>Nova</span></div>
+            <div class="header-controls">
+                <button id="sound-toggle" class="icon-btn" title="Toggle Sound">🔇</button>
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">☀️</button>
+                <div id="timer-display" class="timer hidden">10:00</div>
+            </div>
+        </header>
+
+        <!-- Start Screen -->
+        <main id="start-screen" class="screen active">
+            <div class="glass-card text-center">
+                <h1>Welcome to QuizNova</h1>
+                <p class="subtitle">Test your Frontend Development knowledge</p>
+                <ul class="quiz-info">
+                    <li>📝 10 Multiple Choice Questions</li>
+                    <li>⏱️ 10 Minutes Total Time</li>
+                    <li>🎯 Passing Score: 70%</li>
+                    <li>⌨️ Tip: Use arrow keys to navigate</li>
+                </ul>
+                <button id="start-btn" class="primary-btn pulse-animation">Start Quiz</button>
+            </div>
+        </main>
+
+        <!-- Quiz Screen -->
+        <main id="quiz-screen" class="screen hidden">
+            <div class="glass-card">
+                <div class="progress-header">
+                    <span id="question-counter">Question 1 of 10</span>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-fill"></div>
+                    </div>
+                </div>
+                
+                <h2 id="question-text" class="question-text">Question goes here?</h2>
+                
+                <div id="options-container" class="options-grid">
+                    <!-- Options injected via JS -->
+                </div>
+
+                <div class="navigation-controls">
+                    <button id="prev-btn" class="secondary-btn" disabled>Previous</button>
+                    <button id="next-btn" class="primary-btn">Next</button>
+                    <button id="submit-btn" class="danger-btn hidden">Submit Quiz</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Results Screen -->
+        <main id="result-screen" class="screen hidden">
+            <div class="glass-card text-center">
+                <h2>Quiz Completed!</h2>
+                <div class="score-circle">
+                    <span id="final-percentage">0%</span>
+                </div>
+                <h3 id="performance-message" class="performance-msg">Great Job!</h3>
+                
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-label">Total</span>
+                        <span id="stat-total" class="stat-value">10</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Correct</span>
+                        <span id="stat-correct" class="stat-value text-success">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Incorrect</span>
+                        <span id="stat-incorrect" class="stat-value text-danger">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Unanswered</span>
+                        <span id="stat-unanswered" class="stat-value text-warning">0</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="review-btn" class="secondary-btn">Review Answers</button>
+                    <button id="restart-btn" class="primary-btn">Restart Quiz</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Review Screen -->
+        <main id="review-screen" class="screen hidden">
+            <div class="glass-card">
+                <div class="review-header">
+                    <h2>Answer Review</h2>
+                    <button id="back-to-results-btn" class="secondary-btn">Back to Results</button>
+                </div>
+                <div id="review-container" class="review-list">
+                    <!-- Review items injected via JS -->
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Custom Confirmation Modal -->
+    <div id="confirm-modal" class="modal-overlay hidden">
+        <div class="glass-card modal-content">
+            <h3>Submit Quiz?</h3>
+            <p id="modal-warning-text">Are you sure you want to submit your answers?</p>
+            <div class="modal-actions">
+                <button id="modal-cancel" class="secondary-btn">Cancel</button>
+                <button id="modal-confirm" class="primary-btn">Yes, Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
