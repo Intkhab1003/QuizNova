@@ -7,7 +7,7 @@
 
 > A modern, responsive, and interactive frontend development quiz application featuring a glassmorphism UI, state management, and real-time performance tracking. 
 
-🔗 **[View Live Project Here](#)** *(Note: Add your GitHub Pages link here once hosted)*
+🔗 **(https://intkhab1003.github.io/QuizNova/)(#)** *(Note: Add your GitHub Pages link here once hosted)*
 
 ---
 
